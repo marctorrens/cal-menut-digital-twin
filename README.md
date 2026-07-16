@@ -1,6 +1,6 @@
 # Cal Menut Digital Twin
 
-Documentació viva de la finca Cal Menut.
+Tot el coneixement de Cal Menut, en un sol lloc.
 
 ## Desenvolupament local
 
@@ -12,5 +12,3 @@ mkdocs serve
 ## Publicació
 
 El projecte està preparat per publicar-se amb GitHub Pages mitjançant GitHub Actions.
-
-URL prevista: `https://calmenut.marctorrens.com`

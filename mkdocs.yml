@@ -1,115 +1,47 @@
-site_name: Cal Menut Digital Twin
-site_description: Documentacio viva de la finca Cal Menut
+site_name: Cal Menut
+site_description: Tot el coneixement de Cal Menut, en un sol lloc.
 site_url: https://calmenut.marctorrens.com
-repo_name: cal-menut-digital-twin
+repo_name: marctorrens/cal-menut-digital-twin
 repo_url: https://github.com/marctorrens/cal-menut-digital-twin
 edit_uri: edit/main/docs/
 
 theme:
   name: material
   language: ca
+  font:
+    text: Inter
   features:
-    - navigation.tabs
+    - navigation.instant
     - navigation.sections
-    - navigation.expand
-    - navigation.indexes
     - navigation.top
     - search.suggest
     - search.highlight
-    - toc.follow
-    - content.action.edit
-    - content.code.copy
   palette:
     - scheme: default
-      primary: brown
-      accent: amber
-      toggle:
-        icon: material/weather-night
-        name: Canvia a mode fosc
-    - scheme: slate
-      primary: brown
-      accent: amber
-      toggle:
-        icon: material/weather-sunny
-        name: Canvia a mode clar
+      primary: white
+      accent: black
   icon:
-    logo: material/home-map-marker
+    logo: material/home
+
+extra_css:
+  - assets/stylesheets/extra.css
 
 plugins:
   - search:
       lang: ca
 
 markdown_extensions:
-  - admonition
   - attr_list
   - md_in_html
   - tables
   - toc:
       permalink: true
-  - pymdownx.details
-  - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
   - Inici: index.md
-  - La finca:
-      - finca/index.md
-      - Estat actual: finca/estat-actual.md
-      - Parcel·les: finca/parcelles.md
-      - Plànols i fotografies: finca/planols-fotografies.md
-  - Infraestructures:
-      - infraestructures/index.md
-      - Comunicacions: comunicacions/index.md
-      - Electricitat: electricitat/index.md
-      - Cablejat: cablejat/index.md
-      - Climatització: climatitzacio/index.md
-  - Comunicacions:
-      - comunicacions/index.md
-      - FTTH: comunicacions/ftth.md
-      - Starlink: comunicacions/starlink.md
-      - Rack: comunicacions/rack.md
-      - Wi-Fi: comunicacions/wifi.md
-  - Electricitat:
-      - electricitat/index.md
-      - Quadre elèctric: electricitat/quadre-electric.md
-      - Circuits: electricitat/circuits.md
-      - Proteccions: electricitat/proteccions.md
-  - Cablejat:
-      - cablejat/index.md
-      - Cablejat exterior: cablejat/exterior.md
-      - Etiquetatge: cablejat/etiquetatge.md
-      - Arquetes i tubs: cablejat/arquetes-tubs.md
-  - Il·luminació:
-      - illuminacio/index.md
-      - Jardí: illuminacio/jardi.md
-      - Façanes: illuminacio/facanes.md
-      - Escenes i automatització: illuminacio/escenes-automatitzacio.md
-  - Legal i administratiu:
-      - legal/index.md
-      - Cadastre: legal/cadastre.md
-      - Registre de la Propietat: legal/registre-propietat.md
-      - Agrupació de parcel·les: legal/agrupacio-parcelles.md
-      - Llicències i urbanisme: legal/llicencies-urbanisme.md
-  - Seguretat i domòtica:
-      - seguretat-domotica/index.md
-      - Videoporter: seguretat-domotica/videoporter.md
-      - Càmeres: seguretat-domotica/cameres.md
-      - HomeKit i Matter: seguretat-domotica/homekit-matter.md
-  - Jardí i exteriors:
-      - jardi-exteriors/index.md
-      - Hort: jardi-exteriors/hort.md
-      - Reg: jardi-exteriors/reg.md
-      - Accessos: jardi-exteriors/accessos.md
-  - Inventari:
-      - inventari/index.md
-      - Compres: inventari/compres.md
-      - Proveïdors: inventari/proveidors.md
-      - Garanties: inventari/garanties.md
-  - Manteniment: manteniment/index.md
-  - Decisions: decisions/index.md
-  - Timeline: timeline/index.md
+  - La Masia: masia/index.md
+  - Projectes: projectes/index.md
+  - Coneixement: coneixement/index.md
   - Pendents: pendents/index.md

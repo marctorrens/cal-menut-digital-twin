@@ -1,21 +1,16 @@
-# Tasques pendents
+# Pendents
 
-## Prioritat alta
+Llista viva de tasques i decisions obertes.
 
-- [ ] Crear repositori privat `cal-menut-digital-twin`.
-- [ ] Pujar la v0.1.
-- [ ] Activar GitHub Pages o connectar Cloudflare Pages.
-- [ ] Configurar `calmenut.marctorrens.com`.
+## Ara
 
-## Prioritat mitjana
+- Publicar la primera versió del Digital Twin.
+- Configurar GitHub Pages.
+- Connectar `calmenut.marctorrens.com`.
+- Revisar la portada.
 
-- [ ] Afegir fotografies inicials.
-- [ ] Incorporar documents FTTH.
-- [ ] Crear primera fitxa del rack.
-- [ ] Crear primera fitxa legal de parcel·les.
+## Després
 
-## Prioritat baixa
-
-- [ ] Dissenyar identitat visual pròpia.
-- [ ] Afegir diagrames SVG.
-- [ ] Preparar plantilles avançades.
+- Incorporar el contingut sobre FTTH.
+- Documentar comunicacions i rack.
+- Crear l'apartat legal i administratiu.
