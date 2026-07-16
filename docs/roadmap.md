@@ -1,32 +1,17 @@
 # Roadmap
 
-## v0.2 — Foundations
+## v0.2
 
-- Layout principal
-- Sidebar
-- Pantalla Masia
-- Design tokens
-- Components base
-- Tema clar/fosc automàtic
-- Docs inicials
+Base React, deploy automàtic i estructura inicial.
 
-## v0.3 — Navegació real
+## v0.3
 
-- React Router complet
-- Pàgines placeholder per cada àrea
-- Estat visual de secció activa
+Transformar Cal Menut en una base de coneixement tècnica.
 
-## v0.4 — Integracions simulades
+## v0.4
 
-- Model de dades
-- Services mock
-- Home Assistant mock
-- UniFi mock
-- GreenHeiss mock
+Crear fitxes reutilitzables per infraestructures i equips.
 
-## v1.0 — Primera versió viva
+## v0.5
 
-- Dades reals
-- Alertes
-- Documentació útil
-- Manteniment
+Afegir primer contingut real: xarxa, electricitat, porta i GreenHeiss.
