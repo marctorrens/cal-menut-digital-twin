@@ -1,0 +1,22 @@
+.cm-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cm-stat span {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.cm-stat strong {
+  color: var(--text);
+  font-size: 28px;
+  letter-spacing: -0.04em;
+  font-weight: 650;
+}
+
+.cm-stat small {
+  color: var(--text-muted);
+  font-size: 13px;
+}

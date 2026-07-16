@@ -1,0 +1,39 @@
+.cm-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--surface-muted);
+  color: var(--text);
+}
+
+.cm-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.cm-status-success {
+  color: var(--success);
+}
+
+.cm-status-warning {
+  color: var(--warning);
+}
+
+.cm-status-danger {
+  color: var(--danger);
+}
+
+.cm-status-info {
+  color: var(--info);
+}
+
+.cm-status-neutral {
+  color: var(--text-muted);
+}
