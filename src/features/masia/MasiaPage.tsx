@@ -1,111 +1,102 @@
 import {
-  Camera,
+  BookOpen,
+  CalendarDays,
   DoorClosed,
+  Droplets,
+  FileText,
   Flame,
-  Gauge,
   Home,
   Lightbulb,
+  Map,
+  Package,
+  PencilLine,
+  Shield,
   Trees,
   Wrench,
   Zap,
+  Network,
+  Hammer,
 } from "lucide-react";
-import { Card } from "../../components/Card";
-import { PageHeader } from "../../components/PageHeader";
-import { Stat } from "../../components/Stat";
-import { StatusBadge } from "../../components/StatusBadge";
-import { Tile } from "../../components/Tile";
 import "./MasiaPage.css";
+
+const sections = [
+  {
+    title: "Infraestructures",
+    description: "Els sistemes físics que formen la masia.",
+    items: [
+      { icon: Home, title: "Masia", text: "Plànols, espais i distribució." },
+      { icon: Trees, title: "Jardí i exterior", text: "Finca, reg, arbres i camins." },
+      { icon: DoorClosed, title: "Portes i accessos", text: "Motors, claus i videoporter." },
+      { icon: Zap, title: "Electricitat", text: "Quadres, circuits i canalitzacions." },
+      { icon: Droplets, title: "Aigua", text: "Canonades, dipòsits i claus de pas." },
+      { icon: Flame, title: "Climatització", text: "GreenHeiss, radiadors i hidràulica." },
+      { icon: Network, title: "Xarxa i comunicacions", text: "Rack, UniFi, fibra i cablejat." },
+      { icon: Lightbulb, title: "Il·luminació", text: "Lluminàries, escenes i criteris." },
+      { icon: Shield, title: "Seguretat", text: "Càmeres, gravació i detecció." },
+    ],
+  },
+  {
+    title: "Gestió",
+    description: "El manteniment i la documentació operativa.",
+    items: [
+      { icon: Wrench, title: "Manteniment", text: "Tasques, revisions i incidències." },
+      { icon: Package, title: "Inventari", text: "Equips, recanvis i materials." },
+      { icon: FileText, title: "Documents", text: "Manuals, garanties i factures." },
+    ],
+  },
+  {
+    title: "Projecte",
+    description: "La memòria de la reforma i les decisions preses.",
+    items: [
+      { icon: Hammer, title: "Reforma", text: "Fases, fotos i evolució." },
+      { icon: Map, title: "Plànols", text: "Distribució i instal·lacions." },
+      { icon: PencilLine, title: "Decisions", text: "Per què es va fer així." },
+      { icon: CalendarDays, title: "Cronologia", text: "Historial i canvis importants." },
+    ],
+  },
+];
 
 export function MasiaPage() {
   return (
-    <div className="cm-masia-page">
-      <PageHeader
-        eyebrow="Masia"
-        title="Tot està al seu lloc."
-        description="Una visió tranquil·la de Cal Menut: estat general, energia, accessos, clima i manteniment."
-      />
-
-      <section className="cm-hero-card">
-        <div>
-          <StatusBadge tone="success">Tot correcte</StatusBadge>
-          <h2>La masia funciona amb normalitat.</h2>
-          <p>No hi ha incidències actives ni alertes de manteniment pendents.</p>
+    <main className="cm-knowledge-home">
+      <section className="cm-cover">
+        <div className="cm-cover-mark">
+          <BookOpen size={22} strokeWidth={1.8} />
         </div>
-        <div className="cm-hero-symbol">
-          <Home size={40} strokeWidth={1.6} />
-        </div>
+
+        <p className="cm-kicker">Cal Menut</p>
+        <h1>La memòria viva de la masia.</h1>
+        <p className="cm-cover-text">
+          Tot el que cal saber sobre la reforma, la infraestructura i el manteniment,
+          en un sol lloc.
+        </p>
       </section>
 
-      <section className="cm-stat-grid">
-        <Card>
-          <Stat label="Consum actual" value="3,2 kW" detail="Simulat · Energia" />
-        </Card>
-        <Card>
-          <Stat label="Caldera" value="Activa" detail="Simulat · GreenHeiss" />
-        </Card>
-        <Card>
-          <Stat label="Accessos" value="Tancats" detail="Porta i accés principal" />
-        </Card>
-      </section>
+      <section className="cm-index">
+        {sections.map((section) => (
+          <div className="cm-index-section" key={section.title}>
+            <div className="cm-section-heading">
+              <h2>{section.title}</h2>
+              <p>{section.description}</p>
+            </div>
 
-      <section className="cm-tile-grid">
-        <Tile
-          icon={Trees}
-          title="Finca"
-          description="Zones exteriors, camins, vegetació i estat general del terreny."
-          status="Estable"
-          tone="success"
-        />
-        <Tile
-          icon={Zap}
-          title="Energia"
-          description="Consum, producció, acumulació i evolució energètica."
-          status="3,2 kW"
-          tone="info"
-        />
-        <Tile
-          icon={Flame}
-          title="Climatització"
-          description="Caldera de pellets, circuits, radiadors i temperatura interior."
-          status="Funcionant"
-          tone="success"
-        />
-        <Tile
-          icon={DoorClosed}
-          title="Accessos"
-          description="Portes, videoporter, obertures i estat dels accessos."
-          status="Tancat"
-          tone="success"
-        />
-        <Tile
-          icon={Camera}
-          title="Seguretat"
-          description="Càmeres, deteccions, gravacions i incidències."
-          status="Sense incidències"
-          tone="success"
-        />
-        <Tile
-          icon={Lightbulb}
-          title="Il·luminació"
-          description="Escenes, zones, horaris i automatitzacions."
-          status="Preparat"
-          tone="neutral"
-        />
-        <Tile
-          icon={Gauge}
-          title="Aigua"
-          description="Pressió, dipòsits, reg i possibles consums anòmals."
-          status="Pendent"
-          tone="neutral"
-        />
-        <Tile
-          icon={Wrench}
-          title="Manteniment"
-          description="Tasques, revisions, manuals i historial d'intervencions."
-          status="0 pendents"
-          tone="success"
-        />
+            <div className="cm-index-grid">
+              {section.items.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <article className="cm-index-card" key={item.title}>
+                    <Icon size={19} strokeWidth={1.8} />
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.text}</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </section>
-    </div>
+    </main>
   );
 }
