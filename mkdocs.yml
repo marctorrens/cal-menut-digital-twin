@@ -1,59 +1,45 @@
 site_name: Cal Menut
 site_description: Tot el coneixement de Cal Menut, en un sol lloc.
 site_url: https://marctorrens.github.io/cal-menut-digital-twin/
-repo_name: cal-menut-digital-twin
 repo_url: https://github.com/marctorrens/cal-menut-digital-twin
-edit_uri: edit/main/docs/
-
-extra_css:
-  - stylesheets/extra.css
-
-extra:
-  generator: false
-
-theme:
-  name: material
-  language: ca
-  custom_dir: overrides
-  features:
-    - navigation.sections
-    - navigation.indexes
-    - navigation.top
-    - search.suggest
-    - search.highlight
-    - toc.follow
-    - content.action.edit
-    - content.code.copy
-  palette:
-    - scheme: default
-      primary: custom
-      accent: custom
-  font:
-    text: Inter
-    code: JetBrains Mono
-  icon:
-    logo: material/home-variant-outline
-
-plugins:
-  - search:
-      lang: ca
-
-markdown_extensions:
-  - admonition
-  - attr_list
-  - md_in_html
-  - tables
-  - toc:
-      permalink: true
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.tasklist:
-      custom_checkbox: true
+repo_name: marctorrens/cal-menut-digital-twin
 
 nav:
+  - Cal Menut: index.md
   - La Masia: masia/index.md
   - Projectes: projectes/index.md
   - Infraestructures: infraestructures/index.md
   - Aspectes legals: legal/index.md
   - Inventari: inventari/index.md
   - Pendents: pendents/index.md
+
+theme:
+  name: material
+  language: ca
+  custom_dir: overrides
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: white
+      accent: black
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+plugins:
+  - search
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true

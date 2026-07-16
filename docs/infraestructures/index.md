@@ -1,3 +1,3 @@
 # Infraestructures
 
-Aquesta pàgina formarà part de la propera revisió de Cal Menut Digital Twin.
+Aquesta secció s'anirà completant a mesura que el Digital Twin evolucioni.
