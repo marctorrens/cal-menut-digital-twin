@@ -1,3 +1,3 @@
-# Masia
+# La Masia
 
-Aquesta secció s'anirà completant a mesura que el Digital Twin evolucioni.
+La Masia recull el coneixement físic de Cal Menut: espais, història, instal·lacions, exteriors i evolució.

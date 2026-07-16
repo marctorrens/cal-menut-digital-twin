@@ -1,3 +1,3 @@
 # Infraestructures
 
-Aquesta secció s'anirà completant a mesura que el Digital Twin evolucioni.
+Electricitat, comunicacions, aigua, climatització, cablejat i sistemes tècnics de la masia.

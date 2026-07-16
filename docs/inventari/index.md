@@ -1,3 +1,3 @@
 # Inventari
 
-Aquesta secció s'anirà completant a mesura que el Digital Twin evolucioni.
+Elements instal·lats o previstos a Cal Menut: equips, materials, garanties, proveïdors i documentació associada.

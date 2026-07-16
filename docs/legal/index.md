@@ -1,3 +1,3 @@
-# Legal
+# Aspectes legals
 
-Aquesta secció s'anirà completant a mesura que el Digital Twin evolucioni.
+Tràmits administratius i legals vinculats a Cal Menut: parcel·les, cadastre, registre, nomenclàtor, permisos i documentació oficial.

@@ -1,21 +1,44 @@
 :root {
-  --cm-text: #1d1d1f;
+  --cm-text: #111111;
   --cm-muted: #6e6e73;
-  --cm-border: #e5e5ea;
+  --cm-soft: #f5f5f7;
+  --cm-line: #e5e5ea;
+  --cm-width: 920px;
+}
+
+.md-header {
+  box-shadow: none;
+  border-bottom: 1px solid var(--cm-line);
+}
+
+.md-header__title {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.md-tabs,
+.md-footer,
+.md-source {
+  display: none;
+}
+
+.md-sidebar--secondary {
+  display: none;
+}
+
+.md-content {
+  max-width: var(--cm-width);
+  margin: 0 auto;
 }
 
 .md-main__inner {
   margin-top: 0;
 }
 
-.md-content {
-  max-width: 820px;
-}
-
 .md-typeset {
   color: var(--cm-text);
   font-size: 0.92rem;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .md-typeset h1,
@@ -24,102 +47,146 @@
   letter-spacing: -0.035em;
 }
 
-.cm-home {
-  padding: 5.5rem 0 4rem;
+.md-typeset a {
+  color: var(--cm-text);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
 }
 
-.cm-kicker {
-  margin: 0 0 0.35rem;
+.cm-home {
+  padding: 8.5rem 0 4rem;
+}
+
+.cm-hero {
+  margin-bottom: 5rem;
+}
+
+.cm-eyebrow {
+  margin: 0 0 1rem;
   color: var(--cm-muted);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.cm-home h1 {
+.cm-hero h1 {
   margin: 0;
-  font-size: clamp(3rem, 9vw, 6.4rem);
-  font-weight: 760;
+  font-size: clamp(4.2rem, 10vw, 8.5rem);
   line-height: 0.92;
+  font-weight: 700;
   letter-spacing: -0.075em;
 }
 
-.cm-lead {
-  margin: 1.5rem 0 4.5rem;
-  color: var(--cm-muted);
-  font-size: clamp(1.35rem, 3vw, 2.1rem);
-  font-weight: 430;
+.cm-subtitle {
+  margin: 2rem 0 0;
+  max-width: 660px;
+  color: var(--cm-text);
+  font-size: clamp(1.45rem, 2.7vw, 2.15rem);
   line-height: 1.18;
-  letter-spacing: -0.045em;
+  font-weight: 500;
+  letter-spacing: -0.04em;
 }
 
 .cm-status {
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--cm-line);
+  border-bottom: 1px solid var(--cm-line);
+}
+
+.cm-section-title,
+.cm-label {
+  margin: 0 0 1.75rem;
+  color: var(--cm-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cm-columns {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2.5rem;
-  padding-top: 2.2rem;
-  border-top: 1px solid var(--cm-border);
+  gap: 2.4rem;
 }
 
-.cm-status h2 {
-  margin: 0 0 1rem;
-  font-size: 0.82rem;
+.cm-column h2 {
+  margin: 0 0 1.1rem;
+  font-size: 1.1rem;
+  line-height: 1.2;
   font-weight: 650;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.035em;
 }
 
-.cm-status ul {
+.cm-column ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.cm-status li {
+.cm-column li {
   margin: 0.55rem 0;
   color: var(--cm-muted);
 }
 
 .cm-next {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--cm-border);
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--cm-soft);
+  border-radius: 22px;
 }
 
-.cm-next p {
-  margin: 0 0 0.45rem;
-  color: var(--cm-muted);
-  font-size: 0.82rem;
+.cm-next .cm-label {
+  margin-bottom: 0.75rem;
 }
 
-.cm-next strong {
-  font-size: clamp(1.2rem, 2.3vw, 1.65rem);
-  font-weight: 600;
-  letter-spacing: -0.035em;
+.cm-next-title {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  line-height: 1.15;
 }
 
 .cm-closing {
-  margin-top: 5rem;
+  margin: 4rem 0 0;
   color: var(--cm-muted);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
+  text-align: center;
 }
 
-.md-footer-meta,
-.md-footer {
-  background: transparent;
+.md-nav__title,
+.md-nav__item .md-nav__link--active {
+  font-weight: 650;
 }
 
-@media screen and (max-width: 760px) {
+.md-nav__link {
+  color: var(--cm-muted);
+}
+
+.md-nav__link:hover,
+.md-nav__link--active {
+  color: var(--cm-text);
+}
+
+@media screen and (max-width: 76.2344em) {
+  .md-content {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
   .cm-home {
-    padding: 3.2rem 0 2.5rem;
+    padding: 5rem 0 3rem;
   }
 
-  .cm-status {
+  .cm-columns {
     grid-template-columns: 1fr;
-    gap: 2.1rem;
+    gap: 2rem;
   }
 
-  .cm-lead {
-    margin-bottom: 3rem;
+  .cm-next {
+    padding: 1.5rem;
+    border-radius: 18px;
   }
 }

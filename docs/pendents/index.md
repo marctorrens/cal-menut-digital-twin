@@ -1,3 +1,7 @@
 # Pendents
 
-Aquesta secció s'anirà completant a mesura que el Digital Twin evolucioni.
+Tasques i decisions obertes.
+
+## Pròxima fita
+
+**Posada en servei de la FTTH**
