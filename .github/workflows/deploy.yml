@@ -1,4 +1,4 @@
-name: Deploy Cal Menut OS
+name: Deploy Cal Menut Digital Twin
 
 on:
   push:
@@ -21,21 +21,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: 22
+          python-version: '3.12'
 
-      - name: Install
-        run: npm install
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - name: Build
-        run: npm run build
+      - name: Build MkDocs
+        run: mkdocs build --strict
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./site
 
   deploy:
     environment:

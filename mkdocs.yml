@@ -14,8 +14,6 @@ theme:
   font:
     text: Inter
     code: JetBrains Mono
-  logo: null
-  favicon: null
   features:
     - navigation.instant
     - navigation.tracking
