@@ -1,0 +1,321 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+new file mode 100644
+index 0000000..2f3a2a1
+--- /dev/null
++++ b/.github/workflows/deploy.yml
+@@ -0,0 +1,38 @@
++name: Deploy MkDocs site
++
++on:
++  push:
++    branches:
++      - main
++  workflow_dispatch:
++
++permissions:
++  contents: read
++  pages: write
++  id-token: write
++
++concurrency:
++  group: pages
++  cancel-in-progress: false
++
++jobs:
++  build:
++    runs-on: ubuntu-latest
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v4
++
++      - name: Set up Python
++        uses: actions/setup-python@v5
++        with:
++          python-version: '3.12'
++
++      - name: Install dependencies
++        run: pip install -r requirements.txt
++
++      - name: Build site
++        run: mkdocs build --strict
++
++      - name: Upload artifact
++        uses: actions/upload-pages-artifact@v3
++        with:
++          path: site
++
++  deploy:
++    environment:
++      name: github-pages
++      url: ${{ steps.deployment.outputs.page_url }}
++    runs-on: ubuntu-latest
++    needs: build
++    steps:
++      - name: Deploy to GitHub Pages
++        id: deployment
++        uses: actions/deploy-pages@v4
+diff --git a/mkdocs.yml b/mkdocs.yml
+index 0000000..7c91d0a 100644
+--- a/mkdocs.yml
++++ b/mkdocs.yml
+@@ -1 +1,55 @@
+-site_name: Cal Menut Digital Twin site_description: Documentacio viva de la finca Cal Menut site_url: https://calmenut.marctorrens.com repo_name: cal-menut-digital-twin repo_url: https://github.com/marctorrens/cal-menut-digital-twin edit_uri: edit/main/docs/ theme: name: material language: ca features: - navigation.tabs - navigation.sections - navigation.expand - navigation.indexes - navigation.top - search.suggest - search.highlight - toc.follow - content.action.edit - content.code.copy palette: - scheme: default primary: brown accent: amber toggle: icon: material/weather-night name: Canvia a mode fosc - scheme: slate primary: brown accent: amber toggle: icon: material/weather-sunny name: Canvia a mode clar icon: logo: material/home-map-marker plugins: - search: lang: ca markdown_extensions: - admonition - attr_list - md_in_html - tables - toc: permalink: true - pymdownx.details - pymdownx.superfences - pymdownx.tasklist: custom_checkbox: true - pymdownx.emoji: emoji_index: !!python/name:material.extensions.emoji.twemoji emoji_generator: !!python/name:material.extensions.emoji.to_svg nav: - Inici: index.md - La finca: - finca/index.md - Estat actual: finca/estat-actual.md - Parcel·les: finca/parcelles.md - Plànols i fotografies: finca/planols-fotografies.md - Infraestructures: - infraestructures/index.md - Comunicacions: comunicacions/index.md - Electricitat: electricitat/index.md - Cablejat: cablejat/index.md - Climatització: climatitzacio/index.md - Comunicacions: - comunicacions/index.md - FTTH: comunicacions/ftth.md - Starlink: comunicacions/starlink.md - Rack: comunicacions/rack.md - Wi-Fi: comunicacions/wifi.md - Electricitat: - electricitat/index.md - Quadre elèctric: electricitat/quadre-electric.md - Circuits: electricitat/circuits.md - Proteccions: electricitat/proteccions.md - Cablejat: - cablejat/index.md - Cablejat exterior: cablejat/exterior.md - Etiquetatge: cablejat/etiquetatge.md - Arquetes i tubs: cablejat/arquetes-tubs.md - Il·luminació: - illuminacio/index.md - Jardí: illuminacio/jardi.md - Façanes: illuminacio/facanes.md - Escenes i automatització: illuminacio/escenes-automatitzacio.md - Legal i administratiu: - legal/index.md - Cadastre: legal/cadastre.md - Registre de la Propietat: legal/registre-propietat.md - Agrupació de parcel·les: legal/agrupacio-parcelles.md - Llicències i urbanisme: legal/llicencies-urbanisme.md - Seguretat i domòtica: - seguretat-domotica/index.md - Videoporter: seguretat-domotica/videoporter.md - Càmeres: seguretat-domotica/cameres.md - HomeKit i Matter: seguretat-domotica/homekit-matter.md - Jardí i exteriors: - jardi-exteriors/index.md - Hort: jardi-exteriors/hort.md - Reg: jardi-exteriors/reg.md - Accessos: jardi-exteriors/accessos.md - Inventari: - inventari/index.md - Compres: inventari/compres.md - Proveïdors: inventari/proveidors.md - Garanties: inventari/garanties.md - Manteniment: manteniment/index.md - Decisions: decisions/index.md - Timeline: timeline/index.md - Pendents: pendents/index.md
++site_name: Cal Menut
++site_description: Tot el coneixement de Cal Menut, en un sol lloc.
++site_url: https://calmenut.marctorrens.com
++
++repo_name: marctorrens/cal-menut-digital-twin
++repo_url: https://github.com/marctorrens/cal-menut-digital-twin
++edit_uri: edit/main/docs/
++
++theme:
++  name: material
++  language: ca
++  custom_dir: overrides
++  features:
++    - navigation.instant
++    - navigation.sections
++    - navigation.indexes
++    - navigation.top
++    - search.suggest
++    - search.highlight
++  palette:
++    - scheme: default
++      primary: white
++      accent: black
++  font:
++    text: Inter
++    code: Roboto Mono
++  logo: assets/logo.svg
++  favicon: assets/favicon.svg
++
++extra_css:
++  - stylesheets/extra.css
++
++plugins:
++  - search:
++      lang: ca
++
++markdown_extensions:
++  - attr_list
++  - md_in_html
++  - tables
++  - toc:
++      permalink: true
++  - pymdownx.tasklist:
++      custom_checkbox: true
++
++nav:
++  - Inici: index.md
++  - La Masia: masia/index.md
++  - Projectes: projectes/index.md
++  - Coneixement: coneixement/index.md
++  - Pendents: pendents/index.md
++  - Legal: legal/index.md
++  - Comunicacions: comunicacions/index.md
++  - Il·luminació: illuminacio/index.md
++  - Decisions: decisions/index.md
++  - Timeline: timeline/index.md
+diff --git a/docs/index.md b/docs/index.md
+index 0000000..ae3a1f5 100644
+--- a/docs/index.md
++++ b/docs/index.md
+@@ -1,4 +1,31 @@
+-# Cal Menut Digital Twin Benvingut al **Cal Menut Digital Twin**, la documentació viva de la finca Cal Menut. Aquest espai té com a objectiu centralitzar, ordenar i mantenir actualitzada tota la informació tècnica, administrativa i operativa de la finca.
+-## Estat general | Àrea | Estat | Notes | |---|---:|---| | FTTH | En marxa | Expedient amb Estabanell i documentació associada | | Comunicacions | Disseny | Rack, Wi-Fi, Starlink i xarxa cablejada | | Electricitat | Disseny | Circuits exteriors i proteccions pendents de concretar | | Il·luminació exterior | Disseny | Preferència per 230 V, 2700 K i IP65/IP66 | | Legal i administratiu | Preparació | Agrupació de parcel·les, cadastre i registre | | Jardí i exteriors | Inicial | Hort, reg, accessos i il·luminació paisatgística | ## Principis del projecte - **Simplicitat:** primer una wiki estàtica, robusta i fàcil de mantenir.
+-- **Una única font de veritat:** cada decisió i cada element tindrà un lloc clar. - **Portabilitat:** contingut en Markdown i arxius oberts. - **Traçabilitat:** registre de decisions, fases i canvis. - **Ús pràctic:** documentació pensada per manteniment, ampliacions i professionals. ## Properes accions - [ ] Crear repositori privat a GitHub. - [ ] Publicar la v0.1. - [ ] Configurar domini `calmenut.marctorrens.com`. - [ ] Incorporar fotografies i plànols inicials.
+-- [ ] Consolidar la informació ja treballada sobre FTTH, comunicacions i il·luminació. ## Enllaços ràpids - [Timeline del projecte](timeline/) - [Registre de decisions](decisions/) - [Tasques pendents](pendents/) - [Legal i administratiu](legal/) - [Comunicacions](comunicacions/)
++# Cal Menut Digital Twin
++
++<p class="lead">Tot el coneixement de Cal Menut,<br>en un sol lloc.</p>
++
++Cal Menut és una masia en evolució.
++
++Aquest espai recull el coneixement acumulat sobre la masia: els projectes, les decisions, les instal·lacions i la seva història.
++
++No és un manual.
++
++És la memòria viva de Cal Menut.
++
++---
++
++## Explorar
++
++<div class="home-links" markdown>
++
++[La Masia](masia/)
++
++[Projectes](projectes/)
++
++[Coneixement](coneixement/)
++
++[Pendents](pendents/)
++
++</div>
++
++---
++
++<p class="quiet">Tot està al seu lloc.</p>
+diff --git a/docs/masia/index.md b/docs/masia/index.md
+new file mode 100644
+index 0000000..c0b09ac
+--- /dev/null
++++ b/docs/masia/index.md
+@@ -0,0 +1,17 @@
++# La Masia
++
++La Masia és el lloc físic de Cal Menut: l'edifici, els exteriors, les instal·lacions i els terrenys associats.
++
++Aquí viurà la informació estable sobre l'espai.
++
++## Contingut previst
++
++- Història
++- Espais
++- Plànols
++- Fotografies
++- Instal·lacions existents
++- Elements singulars
++
++## Estat
++
++En construcció.
+diff --git a/docs/projectes/index.md b/docs/projectes/index.md
+new file mode 100644
+index 0000000..a1bd981
+--- /dev/null
++++ b/docs/projectes/index.md
+@@ -0,0 +1,17 @@
++# Projectes
++
++Els projectes són les actuacions en curs o previstes a Cal Menut.
++
++Cada projecte tindrà un objectiu clar, un estat i les decisions principals associades.
++
++## Projectes inicials
++
++- FTTH
++- Comunicacions
++- Il·luminació exterior
++- Agrupació de parcel·les
++- Rack de comunicacions
++
++## Estat
++
++En construcció.
+diff --git a/docs/coneixement/index.md b/docs/coneixement/index.md
+new file mode 100644
+index 0000000..257a4bf
+--- /dev/null
++++ b/docs/coneixement/index.md
+@@ -0,0 +1,13 @@
++# Coneixement
++
++Coneixement és tot allò que val la pena recordar.
++
++No només què s'ha decidit, sinó per què.
++
++## Contingut previst
++
++- Criteris tècnics
++- Alternatives descartades
++- Aprenentatges
++- Bones pràctiques
++- Notes de manteniment
+diff --git a/docs/stylesheets/extra.css b/docs/stylesheets/extra.css
+new file mode 100644
+index 0000000..b80e9a9
+--- /dev/null
++++ b/docs/stylesheets/extra.css
+@@ -0,0 +1,70 @@
++:root {
++  --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
++  --md-primary-fg-color: #ffffff;
++  --md-primary-bg-color: #111111;
++  --md-accent-fg-color: #111111;
++}
++
++body {
++  letter-spacing: -0.01em;
++}
++
++.md-header {
++  box-shadow: none;
++  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
++}
++
++.md-header__title {
++  font-weight: 500;
++}
++
++.md-main__inner {
++  margin-top: 2.5rem;
++}
++
++.md-content {
++  max-width: 760px;
++}
++
++.md-typeset h1 {
++  font-size: clamp(2.4rem, 5vw, 4.8rem);
++  line-height: 1.02;
++  letter-spacing: -0.05em;
++  font-weight: 650;
++  margin-bottom: 1.2rem;
++}
++
++.md-typeset h2 {
++  font-weight: 600;
++  letter-spacing: -0.03em;
++}
++
++.md-typeset p {
++  font-size: 1.02rem;
++  line-height: 1.75;
++}
++
++.lead {
++  font-size: clamp(1.35rem, 2.4vw, 2rem) !important;
++  line-height: 1.25 !important;
++  letter-spacing: -0.035em;
++  color: rgba(0, 0, 0, 0.68);
++  margin-bottom: 3rem !important;
++}
++
++.home-links a {
++  display: block;
++  color: inherit;
++  font-size: 1.35rem;
++  text-decoration: none;
++  padding: 0.85rem 0;
++  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
++}
++
++.home-links a:hover {
++  color: rgba(0, 0, 0, 0.55);
++}
++
++.quiet {
++  color: rgba(0, 0, 0, 0.45);
++  font-size: 0.95rem !important;
++}
+diff --git a/docs/assets/logo.svg b/docs/assets/logo.svg
+new file mode 100644
+index 0000000..6af3a84
+--- /dev/null
++++ b/docs/assets/logo.svg
+@@ -0,0 +1,4 @@
++<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
++  <rect width="64" height="64" rx="14" fill="#111"/>
++  <path d="M17 35 32 22l15 13v13H17V35Z" fill="#fff"/>
++</svg>
+diff --git a/docs/assets/favicon.svg b/docs/assets/favicon.svg
+new file mode 100644
+index 0000000..6af3a84
+--- /dev/null
++++ b/docs/assets/favicon.svg
+@@ -0,0 +1,4 @@
++<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
++  <rect width="64" height="64" rx="14" fill="#111"/>
++  <path d="M17 35 32 22l15 13v13H17V35Z" fill="#fff"/>
++</svg>
