@@ -1,55 +1,94 @@
 import {
-  Home,
-  Trees,
-  Zap,
-  Flame,
-  Droplets,
-  Lightbulb,
-  DoorClosed,
-  Camera,
-  Wrench,
-  Package,
   BookOpen,
-  Settings,
+  CalendarDays,
+  DoorClosed,
+  Droplets,
+  FileText,
+  Flame,
+  Hammer,
+  Home,
+  Lightbulb,
+  Map,
+  Network,
+  Package,
+  PencilLine,
+  Shield,
+  Trees,
+  Wrench,
+  Zap,
 } from "lucide-react";
 import "./Sidebar.css";
 
-const items = [
-  { label: "Masia", icon: Home, active: true },
-  { label: "Finca", icon: Trees },
-  { label: "Energia", icon: Zap },
-  { label: "Climatització", icon: Flame },
-  { label: "Aigua", icon: Droplets },
-  { label: "Il·luminació", icon: Lightbulb },
-  { label: "Accessos", icon: DoorClosed },
-  { label: "Seguretat", icon: Camera },
-  { label: "Manteniment", icon: Wrench },
-  { label: "Inventari", icon: Package },
-  { label: "Documents", icon: BookOpen },
-  { label: "Configuració", icon: Settings },
+const groups = [
+  {
+    title: "Infraestructures",
+    items: [
+      { label: "Masia", icon: Home },
+      { label: "Jardí i exterior", icon: Trees },
+      { label: "Portes i accessos", icon: DoorClosed },
+      { label: "Electricitat", icon: Zap },
+      { label: "Aigua", icon: Droplets },
+      { label: "Climatització", icon: Flame },
+      { label: "Xarxa i comunicacions", icon: Network },
+      { label: "Il·luminació", icon: Lightbulb },
+      { label: "Seguretat", icon: Shield },
+    ],
+  },
+  {
+    title: "Gestió",
+    items: [
+      { label: "Manteniment", icon: Wrench },
+      { label: "Inventari", icon: Package },
+      { label: "Documents", icon: FileText },
+    ],
+  },
+  {
+    title: "Projecte",
+    items: [
+      { label: "Reforma", icon: Hammer },
+      { label: "Plànols", icon: Map },
+      { label: "Decisions", icon: PencilLine },
+      { label: "Cronologia", icon: CalendarDays },
+    ],
+  },
 ];
 
 export function Sidebar() {
   return (
     <aside className="cm-sidebar">
       <div className="cm-sidebar-brand">
-        <span>Cal Menut</span>
-        <small>OS v0.2</small>
+        <BookOpen size={18} strokeWidth={1.8} />
+        <div>
+          <span>Cal Menut</span>
+          <small>Memòria viva</small>
+        </div>
       </div>
 
-      <nav className="cm-sidebar-nav" aria-label="Navegació principal">
-        {items.map((item) => {
-          const Icon = item.icon;
-          return (
-            <button
-              key={item.label}
-              className={item.active ? "cm-nav-item cm-nav-item-active" : "cm-nav-item"}
-            >
-              <Icon size={18} strokeWidth={1.9} />
-              <span>{item.label}</span>
-            </button>
-          );
-        })}
+      <nav className="cm-sidebar-nav" aria-label="Índex de Cal Menut">
+        {groups.map((group) => (
+          <section className="cm-nav-group" key={group.title}>
+            <h2>{group.title}</h2>
+
+            <div className="cm-nav-list">
+              {group.items.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <button
+                    key={item.label}
+                    className={
+                      group.title === "Infraestructures" && index === 0
+                        ? "cm-nav-item cm-nav-item-active"
+                        : "cm-nav-item"
+                    }
+                  >
+                    <Icon size={16} strokeWidth={1.8} />
+                    <span>{item.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+        ))}
       </nav>
     </aside>
   );
