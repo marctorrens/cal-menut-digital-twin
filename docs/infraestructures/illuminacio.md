@@ -1,3 +1,32 @@
+---
+title: Il·luminació
+type: infraestructura
+relatedEquipment: []
+documents: []
+---
+
 # Il·luminació
 
-Lluminàries, interruptors, circuits, escenes i criteris d'il·luminació.
+## Descripció
+
+Informació pendent de documentar.
+
+## Ubicació
+
+Informació pendent de documentar.
+
+## Com està construïda
+
+Informació pendent de documentar.
+
+## Components relacionats
+
+Informació pendent de documentar.
+
+## Fotografies
+
+Informació pendent de documentar.
+
+## Documents
+
+Informació pendent de documentar.

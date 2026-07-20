@@ -1,15 +1,16 @@
 # Infraestructures
 
-Electricitat, comunicacions, aigua, climatització, cablejat i sistemes tècnics de la masia.
+Biblioteca de les infraestructures físiques de la masia. Cada pàgina resumeix què és, on és, com està construïda i quina documentació relacionada cal consultar.
 
-## Àmbits principals
+<div class="cm-list">
 
-- [Xarxa i comunicacions](xarxa-comunicacions.md)
 - [Electricitat](electricitat.md)
 - [Aigua](aigua.md)
 - [Climatització](climatitzacio.md)
+- [Xarxa i comunicacions](xarxa-comunicacions.md)
 - [Il·luminació](illuminacio.md)
-- [Seguretat](seguretat.md)
 - [Portes i accessos](portes-accessos.md)
+- [Seguretat](seguretat.md)
 - [Jardí i exterior](jardi-exterior.md)
-- [Masia](masia.md)
+
+</div>
