@@ -1,11 +1,16 @@
 ---
-title: Aigua
-type: infraestructura
-relatedEquipment: []
+title: Videoporter
+type: equip
+category: ""
+location: ""
+manufacturer: ""
+model: ""
+related: []
 documents: []
+images: []
 ---
 
-# Aigua
+# Videoporter
 
 ## Descripció
 
@@ -15,18 +20,22 @@ Informació pendent de documentar.
 
 Informació pendent de documentar.
 
-## Com està construïda
+## Instal·lació
 
 Informació pendent de documentar.
 
-## Components relacionats
+## Funcionament
 
 Informació pendent de documentar.
 
-## Fotografies
+## Manteniment
 
 Informació pendent de documentar.
 
 ## Documents
+
+Informació pendent de documentar.
+
+## Relacionats
 
 Informació pendent de documentar.

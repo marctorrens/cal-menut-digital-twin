@@ -1,5 +1,5 @@
 site_name: Cal Menut
-site_description: Repositori de reforma, infraestructures i manteniment de Cal Menut.
+site_description: Biblioteca tècnica personal de la masia Cal Menut.
 site_url: https://marctorrens.github.io/cal-menut-digital-twin/
 
 repo_url: https://github.com/marctorrens/cal-menut-digital-twin
@@ -41,29 +41,24 @@ markdown_extensions:
       permalink: false
 
 nav:
-  - Inici: index.md
-  - Projecte:
-      - projectes/index.md
-      - Reforma: projecte/reforma.md
-      - Cronologia: projecte/cronologia.md
-      - Decisions: projecte/decisions.md
-      - Plànols: projecte/planols.md
-  - La Masia: masia/index.md
+  - Cal Menut: index.md
+  - La masia: masia/index.md
   - Infraestructures:
       - infraestructures/index.md
-      - Masia: infraestructures/masia.md
-      - Xarxa i comunicacions: infraestructures/xarxa-comunicacions.md
       - Electricitat: infraestructures/electricitat.md
       - Aigua: infraestructures/aigua.md
       - Climatització: infraestructures/climatitzacio.md
+      - Xarxa i comunicacions: infraestructures/xarxa-comunicacions.md
       - Il·luminació: infraestructures/illuminacio.md
-      - Seguretat: infraestructures/seguretat.md
       - Portes i accessos: infraestructures/portes-accessos.md
+      - Seguretat: infraestructures/seguretat.md
       - Jardí i exterior: infraestructures/jardi-exterior.md
-  - Gestió:
-      - inventari/index.md
-      - Inventari: gestio/inventari.md
-      - Documents: gestio/documents.md
-      - Manteniment: gestio/manteniment.md
-  - Aspectes legals: legal/index.md
-  - Pendents: pendents/index.md
+  - Equipament:
+      - equipament/index.md
+      - Caldera GreenHeiss: equipament/greenheiss.md
+      - Rack de comunicacions: equipament/rack-comunicacions.md
+      - Switch UniFi: equipament/switch-unifi.md
+      - Motor de la porta: equipament/motor-porta.md
+      - Videoporter: equipament/videoporter.md
+  - Biblioteca: biblioteca/index.md
+  - Projectes: projectes/index.md

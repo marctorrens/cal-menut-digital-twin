@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "build": "mkdocs build --strict"
+  },
+  "devDependencies": {}
+}

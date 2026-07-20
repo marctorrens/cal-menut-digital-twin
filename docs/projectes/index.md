@@ -1,22 +1,19 @@
 # Projectes
 
-Projectes actius, planificats i futurs de Cal Menut.
+Els projectes són agrupacions documentals transversals. Serveixen per reunir informació relacionada amb una intervenció o un àmbit concret sense convertir-se en una eina operativa.
 
-## En marxa
+## Reforma 2026
 
-- FTTH i xarxa de comunicacions.
-- Agrupació de parcel·les.
-- Organització del Digital Twin.
+Informació pendent de documentar.
 
-## A continuació
+## Instal·lació de fibra
 
-- Rack de comunicacions.
-- Videovigilància.
-- Il·luminació exterior.
+Informació pendent de documentar.
 
-## Capítols relacionats
+## Xarxa UniFi
 
-- [Reforma](../projecte/reforma.md)
-- [Cronologia](../projecte/cronologia.md)
-- [Decisions](../projecte/decisions.md)
-- [Plànols](../projecte/planols.md)
+Informació pendent de documentar.
+
+## Jardí
+
+Informació pendent de documentar.
