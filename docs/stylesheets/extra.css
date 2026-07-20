@@ -78,8 +78,20 @@
   letter-spacing: -0.075em;
 }
 
+.cm-version {
+  display: inline-flex;
+  margin: 1.5rem 0 0;
+  padding: 0.35rem 0.75rem;
+  color: var(--cm-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--cm-line);
+  border-radius: 999px;
+}
+
 .cm-subtitle {
-  margin: 2rem 0 0;
+  margin: 1.35rem 0 0;
   max-width: 660px;
   color: var(--cm-text);
   font-size: clamp(1.45rem, 2.7vw, 2.15rem);
