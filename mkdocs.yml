@@ -1,5 +1,5 @@
 site_name: Cal Menut
-site_description: Tot el coneixement de Cal Menut, en un sol lloc.
+site_description: Repositori de reforma, infraestructures i manteniment de Cal Menut.
 site_url: https://marctorrens.github.io/cal-menut-digital-twin/
 
 repo_url: https://github.com/marctorrens/cal-menut-digital-twin
@@ -18,6 +18,7 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
+    - navigation.indexes
     - search.suggest
     - search.highlight
   palette:
@@ -29,8 +30,7 @@ extra_css:
   - stylesheets/extra.css
 
 plugins:
-  - search:
-      lang: ca
+  - search
 
 markdown_extensions:
   - admonition
@@ -42,9 +42,28 @@ markdown_extensions:
 
 nav:
   - Inici: index.md
+  - Projecte:
+      - projectes/index.md
+      - Reforma: projecte/reforma.md
+      - Cronologia: projecte/cronologia.md
+      - Decisions: projecte/decisions.md
+      - Plànols: projecte/planols.md
   - La Masia: masia/index.md
-  - Projectes: projectes/index.md
-  - Infraestructures: infraestructures/index.md
+  - Infraestructures:
+      - infraestructures/index.md
+      - Masia: infraestructures/masia.md
+      - Xarxa i comunicacions: infraestructures/xarxa-comunicacions.md
+      - Electricitat: infraestructures/electricitat.md
+      - Aigua: infraestructures/aigua.md
+      - Climatització: infraestructures/climatitzacio.md
+      - Il·luminació: infraestructures/illuminacio.md
+      - Seguretat: infraestructures/seguretat.md
+      - Portes i accessos: infraestructures/portes-accessos.md
+      - Jardí i exterior: infraestructures/jardi-exterior.md
+  - Gestió:
+      - inventari/index.md
+      - Inventari: gestio/inventari.md
+      - Documents: gestio/documents.md
+      - Manteniment: gestio/manteniment.md
   - Aspectes legals: legal/index.md
-  - Inventari: inventari/index.md
   - Pendents: pendents/index.md
