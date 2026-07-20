@@ -2,6 +2,7 @@
   <section class="cm-hero">
     <p class="cm-eyebrow">Repositori de reforma</p>
     <h1>Cal Menut</h1>
+    <p class="cm-version">Versió 1.0 · 20 de juliol de 2026</p>
     <p class="cm-subtitle">Un lloc únic per ordenar la reforma, les decisions, les infraestructures i el manteniment de la masia.</p>
   </section>
 
